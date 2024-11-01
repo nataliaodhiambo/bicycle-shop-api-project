@@ -1,0 +1,29 @@
+{% extends "myApp/base.html" %}
+{% block content %}
+
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicycle Shop</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Bicycle Shop</h1>
+    </header>
+
+    <section class="bicycle-list">
+        {% for bicycle in bicycles %}
+        <div class = "bicycle-card">
+            <img src="{{bicycle.image.url}}" alt="{{bicycle.name}}">
+            <h2>{{bicycle.name}}</h2>
+            <p>{{bicycle.description}}</p>
+            <p>Price: ${{bicycle.price}}</p>
+        </div>
+        {% endfor %}
+    </section>   
+</body>
+</html>
